@@ -1,0 +1,61 @@
+div .home {
+    height: 780px;
+}
+
+.home{
+  padding:0;
+  position:relative;
+  background: rgb(161, 189, 189);
+}
+
+.home .adv{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:1.5rem;
+  padding:0 9%;
+  padding-top: 2rem;
+}
+
+.home .adv .content{
+  flex:1 1 40rem;
+  animation: slideContent .5s linear .5s backwards;
+  padding-bottom: 15rem;
+}
+
+@keyframes slideContent{
+  0%{
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+}
+
+.home .adv .image{
+  flex:1 1 50rem;
+  padding-bottom: 15rem;
+  position: relative;
+  z-index: 0;
+}
+
+.home .adv .image .phone{
+  width:100%;
+  /* transform: rotate(-35deg); */
+  animation: slideContent .5s linear .5s backwards;
+}
+
+.home .adv .content span{
+  font-size: 2rem;
+  color:black;
+}
+
+.home .adv .content h3{
+  font-size: 5rem;
+  color:black;
+}
+
+.home .adv .content p{
+  font-size: 1.7rem;
+  color:#666;
+  padding:.5rem 0;
+}
