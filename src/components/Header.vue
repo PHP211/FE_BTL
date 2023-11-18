@@ -2,7 +2,7 @@
     <header>
         <div id="menu-bar" class="fas fa-bars"></div>
 
-        <a href="#" class="logo"><img src="../assets/images/logo.png" alt=""></a>
+        <a href="/" class="logo"><img src="../assets/images/logo.png" alt=""></a>
 
         <div class="icons">
             <RouterLink to="/cart"><i class="fa-solid fa-cart-shopping"></i></RouterLink>

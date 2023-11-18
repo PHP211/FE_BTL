@@ -1,49 +1,112 @@
 <template>
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Login #01</h2>
-				</div>
+
+<div class="log">
+	<div class="login" id="login">
+		<form action="" method="post">
+			<h1>Đăng nhập</h1>
+			<div class="input-box">
+				<input type="text" placeholder="Tên đăng nhập" required>
 			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-7 col-lg-5">
-					<div class="login-wrap p-4 p-md-5">
-		      	<div class="icon d-flex align-items-center justify-content-center">
-		      		<span class="fa fa-user-o"></span>
-		      	</div>
-		      	<h3 class="text-center mb-4">Sign In</h3>
-						<form action="#" class="login-form">
-		      		<div class="form-group">
-		      			<input type="text" class="form-control rounded-left" placeholder="Username" required>
-		      		</div>
-	            <div class="form-group d-flex">
-	              <input type="password" class="form-control rounded-left" placeholder="Password" required>
-	            </div>
-	            <div class="form-group">
-	            	<button type="submit" class="form-control btn btn-primary rounded submit px-3">Login</button>
-	            </div>
-	            <div class="form-group d-md-flex">
-	            	<div class="w-50">
-	            		<label class="checkbox-wrap checkbox-primary">Remember Me
-									  <input type="checkbox" checked>
-									  <span class="checkmark"></span>
-									</label>
-								</div>
-								<div class="w-50 text-md-right">
-									<a href="#">Forgot Password</a>
-								</div>
-	            </div>
-	          </form>
-	        </div>
-				</div>
+			<div class="input-box">
+				<input type="password" placeholder="Mật khẩu" required>
 			</div>
-		</div>
-	</section>
+			<div class="remember">
+				<label><input type="checkbox"> Ghi nhớ đăng nhập</label>
+			</div>
+
+			<div class="loginbtn">			
+				<button class="btn" type="submit">Đăng nhập</button>
+			</div>
+
+			<div class="register">
+				<p>Chưa có tài khoản? <RouterLink to="/signup">Đăng ký ngay</RouterLink></p>
+			</div>
+		</form>
+	</div>
+	
+</div>
+
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
 export default {
-    name: 'LoginPage',
+	name: 'LoginPage'
 }
 </script>
+
+<style>
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+div .log{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 10%;
+}
+
+.footer {
+	padding-top: 5%;
+}
+
+.login {
+	width: 400px;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login h1 {
+	font-size: 36px;
+	text-align: center;
+	margin-top: 10%;
+}
+
+.login .input-box {
+	width: 100%;
+	height: 50px;
+	margin: 20px 0;
+	padding: 0 10px;
+}
+
+.input-box input {
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	outline: none;
+	/* border: none; */
+	border: 2px solid black;
+	border-radius: 40px;
+	padding: 20px 45px 20px 20px;
+	font-size: 16px;
+}
+
+.login .remember {
+	display: flex;
+	justify-content: space-between;
+	font-size: 16px;
+	margin: -15px 0 15px;
+	padding-left: 30px;
+	padding-top: 20px;
+}
+
+.remember label input {
+	margin-right: 3px;
+}
+
+.login .loginbtn {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 30%;
+	margin-bottom: 20px;
+}
+
+.login .register {
+	font-size: 15px;
+	text-align: center;
+	padding-bottom: 20px;
+}
+</style>
