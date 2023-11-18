@@ -1,5 +1,5 @@
 <template>
-    <div class="home" id="home">
+    <section class="home" id="home">
         <div class="adv">
             <div class="content">
                 <span><i class="fa-brands fa-apple"></i> Apple iPhone 15 Pro Max</span>
@@ -11,7 +11,7 @@
                 <img src="../assets/images/ip15.png" class="phone" alt="">
             </div>
         </div>
-    </div>
+    </section>
     <Service/>
     <ProductSection/>
     <Featured/>
@@ -21,9 +21,8 @@
 import '../assets/css/home.css'
 import Service from '../components/Service.vue';
 import ProductSection from '../components/ProductSection.vue';
-import Featured from '../components/Featured.vue';
 export default {
     name: 'HomePage',
-    components: { Service, ProductSection, Featured }
+    components: { Service, ProductSection }
 }
 </script>

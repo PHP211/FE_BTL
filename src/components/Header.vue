@@ -4,12 +4,6 @@
 
         <a href="#" class="logo"><img src="../assets/images/logo.png" alt=""></a>
 
-        <nav class="navbar">
-            <RouterLink to="/">Trang chủ</RouterLink>
-            <RouterLink to="/products">Sản phẩm</RouterLink>
-            <RouterLink to="/contact">Liên hệ</RouterLink>
-        </nav>
-
         <div class="icons">
             <RouterLink to="/cart"><i class="fa-solid fa-cart-shopping"></i></RouterLink>
             <RouterLink to="/login">Đăng nhập</RouterLink>

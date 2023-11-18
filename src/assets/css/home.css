@@ -1,21 +1,17 @@
-div .home {
-    height: 780px;
-}
-
 .home{
   padding:0;
   position:relative;
   background: rgb(161, 189, 189);
+  height: 700px;
 }
 
 .home .adv{
-  min-height: 100vh;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap:1.5rem;
   padding:0 9%;
-  padding-top: 2rem;
+  padding-top: 18em;
 }
 
 .home .adv .content{
@@ -33,14 +29,14 @@ div .home {
 
 .home .adv .image{
   flex:1 1 50rem;
-  padding-bottom: 15rem;
+  padding-bottom: 20rem;
   position: relative;
   z-index: 0;
 }
 
 .home .adv .image .phone{
-  width:100%;
-  /* transform: rotate(-35deg); */
+  width: 100%;
+  max-width: 700px;
   animation: slideContent .5s linear .5s backwards;
 }
 
