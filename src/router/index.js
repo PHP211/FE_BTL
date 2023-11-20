@@ -6,6 +6,7 @@ import SignUp from '../views/Signup.vue'
 import NotFound from '../views/NotFound.vue'
 import Cart from '../views/Cart.vue'
 import UserInfo from '../views/UserInfo.vue'
+import ChangePW from '../views/ChangePassword.vue'
 
 const routes = [
     {
@@ -33,10 +34,16 @@ const routes = [
         name: 'UserInfo'
     },
     {
+        path: '/info/changepw',
+        component: ChangePW,
+        name: 'ChangePW'
+    },
+    {
         path: '/:pathMatch(.*)',
         component: NotFound,
         name: 'NotFound'
-    }
+    },
+    
 ]
 
 const router = createRouter({

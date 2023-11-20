@@ -20,6 +20,10 @@ class AxiosAPI {
         const result = (await this.api.post('/api/account',data)).data
         return result
     }
+
+    async UpdateAccount(id, data) {
+        return (await this.api.put(`/api/account/${id}`, data)).data
+    }
 }
 
 export default new AxiosAPI()

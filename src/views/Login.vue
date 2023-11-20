@@ -14,7 +14,7 @@
 				</div>
 
 				<div class="loginbtn">
-					<button class="btn" type="submit" @click.prevent="login">Đăng nhập</button>
+					<button class="btns" type="submit" @click.prevent="login">Đăng nhập</button>
 				</div>
 
 				<div class="register">
@@ -23,7 +23,6 @@
 				</div>
 			</form>
 		</div>
-
 	</div>
 </template>
 

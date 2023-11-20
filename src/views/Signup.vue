@@ -25,7 +25,7 @@
                 </div>
     
                 <div class="regbtn">			
-                    <button class="btn" type="submit" @click.prevent="DangKi">Đăng Ký</button>
+                    <button class="btns" type="submit" @click.prevent="DangKi">Đăng Ký</button>
                 </div>
             </form>
         </div>
@@ -37,6 +37,8 @@
 <script setup>
 import {ref} from 'vue'
 import AxiosAPI from '../services/service'
+import { useRouter } from 'vue-router';
+const router = useRouter()
 const rePass = ref()
 const data = ref(
     {
@@ -75,7 +77,8 @@ async function DangKi() {
     await AxiosAPI.register(data.value)
     data.value = {role : 1}
     rePass.value = ""
-    return alert("Đăng Kí Thành Công")
+    alert("Đăng Kí Thành Công")
+    return router.push('/login')
 }
 
 </script>
