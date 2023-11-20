@@ -10,6 +10,7 @@
   
   .footer .box-container .box{
     flex:1 1 20rem;
+    text-align: center;
   }
   
   .footer .box-container .box h3{

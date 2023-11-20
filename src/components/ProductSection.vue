@@ -22,7 +22,7 @@
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </div>
-                    <a href="#" class="btn">add to cart</a>
+                    <a href="#" class="btns">add to cart</a>
                 </div>
             </div>
 
@@ -43,7 +43,7 @@
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </div>
-                    <a href="#" class="btn">add to cart</a>
+                    <a href="#" class="btns">add to cart</a>
                 </div>
             </div>
 
@@ -64,7 +64,7 @@
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </div>
-                    <a href="#" class="btn">add to cart</a>
+                    <a href="#" class="btns">add to cart</a>
                 </div>
             </div>
             <div class="box">
@@ -84,7 +84,7 @@
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </div>
-                    <a href="#" class="btn">add to cart</a>
+                    <a href="#" class="btns">add to cart</a>
                 </div>
             </div>
             <div class="box">
@@ -104,7 +104,7 @@
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </div>
-                    <a href="#" class="btn">add to cart</a>
+                    <a href="#" class="btns">add to cart</a>
                 </div>
             </div>
             <div class="box">
@@ -124,7 +124,7 @@
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </div>
-                    <a href="#" class="btn">add to cart</a>
+                    <a href="#" class="btns">add to cart</a>
                 </div>
             </div>
             <div class="box">
@@ -144,7 +144,7 @@
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </div>
-                    <a href="#" class="btn">add to cart</a>
+                    <a href="#" class="btns">add to cart</a>
                 </div>
             </div>
             <div class="box">
@@ -164,7 +164,7 @@
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </div>
-                    <a href="#" class="btn">add to cart</a>
+                    <a href="#" class="btns">add to cart</a>
                 </div>
             </div>
             <div class="box">
@@ -184,7 +184,7 @@
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </div>
-                    <a href="#" class="btn">add to cart</a>
+                    <a href="#" class="btns">add to cart</a>
                 </div>
             </div>
             <div class="box">
@@ -204,7 +204,7 @@
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </div>
-                    <a href="#" class="btn">add to cart</a>
+                    <a href="#" class="btns">add to cart</a>
                 </div>
             </div>
             <div class="box">
@@ -224,7 +224,7 @@
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </div>
-                    <a href="#" class="btn">add to cart</a>
+                    <a href="#" class="btns">add to cart</a>
                 </div>
             </div>
             <div class="box">
@@ -244,7 +244,7 @@
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </div>
-                    <a href="#" class="btn">add to cart</a>
+                    <a href="#" class="btns">add to cart</a>
                 </div>
             </div>
         </div> 

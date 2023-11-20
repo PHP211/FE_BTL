@@ -6,16 +6,16 @@
             <div class="box">
                 <h3>Chuyển đến</h3>
                 <RouterLink to="/">Trang chủ</RouterLink>
-                <RouterLink to="/products">Sản phẩm</RouterLink>
-                <RouterLink to="/contact">Liên hệ</RouterLink>
+                <RouterLink to="/info">Tài khoản</RouterLink>
+                <RouterLink to="/cart">Giỏ hàng</RouterLink>
             </div>
 
-            <div class="box">
+            <!-- <div class="box">
                 <h3>Liên kết ngoài</h3>
                 <a href="#">my account</a>
                 <a href="#">my favorite</a>
                 <a href="#">my orders</a>
-            </div>
+            </div> -->
 
             <div class="box">
                 <h3>Theo dõi chúng tôi tại</h3>

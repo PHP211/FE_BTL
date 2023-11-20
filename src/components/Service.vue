@@ -11,7 +11,7 @@
             <div class="box">
                 <i class="fas fa-undo"></i>
                 <h3>Đổi/Trả trong 10 ngày</h3>
-                <p>Cam kết đổi hảng mới nếu có lỗi trong 10 ngày đầu</p>
+                <p>Cam kết đổi hàng mới nếu có lỗi trong 10 ngày đầu</p>
             </div>
 
             <div class="box">

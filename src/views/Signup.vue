@@ -34,7 +34,7 @@
     
 </template>
     
-<script setup >
+<script setup>
 import {ref} from 'vue'
 import AxiosAPI from '../services/service'
 const rePass = ref()
@@ -49,20 +49,22 @@ const data = ref(
     }
 )
 
-function checkPass(){
+function checkPass() {
     if(data.value.password !== rePass.value) {
         rePass.value = ""
-        alert("Mật khẩu chưa trùng khớp")
+        alert("Mật khẩu chưa trùng khớp!")
     }
 }
+
 async function checkUsername(){
     const result = await AxiosAPI.login(data.value.username)
     if(result.isAvailable) {
         data.value.username = ''
-        alert("Tài Khoản Đã Tồn Tại")
+        alert("Tài khoản đã tồn tại")
     }
     return result.isAvailable
 }
+
 async function DangKi() {
     if (!data.value.username) return alert('Vui Lòng Nhập Tài Khoản')
     if (!data.value.password) return alert('Vui Lòng Nhập Mật Khẩu')
