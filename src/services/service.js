@@ -88,6 +88,30 @@ class AxiosAPI {
     async cancel(id) {
         return (await this.api.delete(`/api/bill/${id}`)).data
     }
+
+    async getNonValid() {
+        return (await this.api.get('/api/bill')).data
+    }
+
+    async valid(orderId, staffId) {
+        return (await this.api.put(`/api/bill/${orderId}/valid`, {SID: staffId})).data
+    }
+
+    async done(orderId, delivery) {
+        return (await this.api.put(`api/bill/${orderId}/done`, {deliveryDate: delivery})).data
+    }
+
+    async nextStatus(orderId) {
+        return (await this.api.get(`/api/bill/status/${orderId}`)).data
+    }
+
+    async getOrderBySID(staffId) {
+        return (await this.api.get(`api/bill/sid/${staffId}`)).data
+    }
+
+    async getAllBySID(staffId) {
+        return (await this.api.get(`/api/bill/sid/${staffId}/all`)).data
+    }
 }
 
 export default new AxiosAPI()

@@ -5,22 +5,30 @@
                 <ul class="nav nav-tabs card-header-tabs">
 
                     <li class="nav-item">
+                        <a class="nav-link active">
+                            Đơn đã nhận
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link">
-                            <router-link :to="`/myorder/${props.id}`">
-                                Đơn Hiện Tại
+                            <router-link :to="`/order/${SID}`">
+                                Đơn đang xử lý
                             </router-link>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active">
-                            Tất Cả Đơn Hàng
+                        <a class="nav-link">
+                            <router-link :to="`/order/${SID}/all`">
+                                Đơn đã hoàn thành
+                            </router-link>
                         </a>
                     </li>
 
                 </ul>
             </div>
-            <div class="card-body">
+            <div class="card-body" v-if="listOrder.length > 0">
                 <table class="table text-center">
                     <thead>
                         <tr>
@@ -32,7 +40,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="align-middle " v-for="i in listBill" :key="i._id">
+                        <tr class="align-middle " v-for="i in listOrder" :key="i._id">
                             <th scope="row" style="text-align: center; font-size: 15px;"> {{ i._id }} </th>
                             <td style="font-size: 15px;"> {{ i.createDate }}</td>
                             <td style="font-size: 15px;"> {{ i.value.toLocaleString('it-IT', {
@@ -45,11 +53,16 @@
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-outline-success"
                                         @click="$router.push(`/myorder/${i._id}/detail`)">Chi Tiết</button>
+                                    <button type="button" class="btn btn-outline-primary"
+                                        @click="validOrder(i._id)">Xác nhận</button>
                                 </div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div class="else text-center m-5" v-else>
+                <h3>Chưa Có Đơn Hàng Mới</h3>
             </div>
             <div class="card-footer text-center">
                 <button class="btn btn-outline-danger" @click='$router.push("/info")'>Quay Lại</button>
@@ -63,11 +76,17 @@ import { ref } from 'vue'
 import Axios from '../services/service'
 
 const props = defineProps(['id'])
-const listBill = ref([])
+const listOrder = ref([])
 const indexStatus = ["Đã huỷ", "Chờ xác nhận", "Đang đóng gói", "Đang giao", "Đã thanh toán", "Đã huỷ"]
+const SID = JSON.parse(localStorage.info)._id
 
-async function getListBill() {
-    listBill.value = await Axios.getAvailable(props.id)
+async function getListOrder() {
+    listOrder.value = await Axios.getNonValid()
 }
-getListBill()
+getListOrder()
+
+async function validOrder(id) {
+    await Axios.valid(id, SID)
+    getListOrder()
+}
 </script>

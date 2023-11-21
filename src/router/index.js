@@ -9,8 +9,12 @@ import UserInfo from '../views/UserInfo.vue'
 import ChangePW from '../views/ChangePassword.vue'
 import AddProduct from '../views/AddProduct.vue'
 import UpdateProduct from '../views/UpdateProduct.vue'
-import OrderDetails from '../views/MyOrder.vue'
+import MyOrder from '../views/MyOrder.vue'
 import AllOrder from '../views/AllOrder.vue'
+import OrderDetail from '../views/OrderDetails.vue'
+import StaffOrder from '../views/StaffOrder.vue'
+import AllStaffOrder from '../views/AllStaffOrder.vue'
+import Confirm from '../views/ConfirmOrder.vue'
 
 const routes = [
     {
@@ -61,12 +65,32 @@ const routes = [
     },
     {
         path: '/myorder/:id',
-        component: OrderDetails, 
+        component: MyOrder, 
         props: true,
     },
     {
         path: '/myorder/:id/all',
         component: AllOrder, 
+        props: true,
+    },
+    {
+        path: '/myorder/:id/detail',
+        component: OrderDetail, 
+        props: true,
+    },
+    {
+        path: '/order',
+        component: StaffOrder, 
+        props: true,
+    },
+    {
+        path: '/order/:id',
+        component: Confirm, 
+        props: true,
+    },
+    {
+        path: '/order/:id/all',
+        component: AllStaffOrder, 
         props: true,
     },
     {

@@ -1,5 +1,5 @@
 <template>
-    <section class="myorder" style="padding-top: 10%;">
+    <section class="myorder" style="padding-top: 10%; padding-left: 20%; padding-right: 20%;">
         <div class="card">
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
@@ -41,7 +41,7 @@
                             <td>
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-outline-success"
-                                        @click="$router.push(`/detail/${i._id}`)">Chi Tiết</button>
+                                        @click="$router.push(`/myorder/${i._id}/detail`)">Chi Tiết</button>
                                     <button type="button" class="btn btn-outline-danger"
                                         @click="cancelBill(i._id)">Huỷ</button>
                                 </div>

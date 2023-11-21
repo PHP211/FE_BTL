@@ -80,7 +80,7 @@
                                         <RouterLink :to="'/myorder/'+root._id" class="btn btn-info">Giỏ hàng của tôi</RouterLink>
                                     </div>
                                     <div class="col-sm-2" v-else>
-                                        <RouterLink to="/adminorder" class="btn btn-info">Quản lý giỏ hàng</RouterLink>
+                                        <RouterLink to="/order" class="btn btn-info">Quản lý giỏ hàng</RouterLink>
                                     </div>
                                 </div>
                             </div>
