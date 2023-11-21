@@ -2,44 +2,54 @@
     <section>
         <div class="small-container cart-page">
             <h1>Giỏ hàng của tôi</h1>
-            <table>
-                <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
-                </tr>
-                <tr v-for="(i, index) in cart.prdId" :key="i._id">
-                    <td style="width: 500px;">
-                        <div class="cart-info">
-                            <img :src="i.PrdImage">
-                            <div>
-                                <p>{{ i.productName }}</p>
-                                <small>{{ i.price.toLocaleString('it-IT', { style: 'currency', currency: 'VND' }) }}</small>
-                                <br>
-                                <a href="" class="remove" @click.prevent="deleteItem(index)">Remove</a>
-                            </div>
-                        </div>
-                    </td>
-                    <td style="width: 240px;"><input class="form-control" type="number" v-model="quantity[index]" min="0" max="200"
-                            @change="updateItem"></td>
-                    <td class="price" style="width: 240px;">{{ (i.price * quantity[index]).toLocaleString('it-IT', { style: 'currency', currency: 'VND' }) }}</td>
-                </tr>
-            </table>
-
-            <div class="total-price">
-
-                <table class="total">
+            <div v-if="quantity.length != 0">
+                <table>
                     <tr>
-                        <td>Total</td>
-                        <td>{{ total.toLocaleString('it-IT', { style: 'currency', currency: 'VND' }) }}</td>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                    <tr v-for="(i, index) in cart.prdId" :key="i._id">
+                        <td style="width: 500px;">
+                            <div class="cart-info">
+                                <img :src="i.PrdImage">
+                                <div>
+                                    <p>{{ i.productName }}</p>
+                                    <small>{{ i.price.toLocaleString('it-IT', { style: 'currency', currency: 'VND' })
+                                    }}</small>
+                                    <br>
+                                    <a href="" class="remove" @click.prevent="deleteItem(index)">Remove</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width: 240px;"><input class="form-control" type="number" v-model="quantity[index]"
+                                min="0" max="200" @change="updateItem"></td>
+                        <td class="price" style="width: 240px;">{{ (i.price * quantity[index]).toLocaleString('it-IT', {
+                            style:
+                                'currency', currency: 'VND'
+                        }) }}</td>
                     </tr>
                 </table>
 
+                <div class="total-price">
+
+                    <table class="total">
+                        <tr>
+                            <td>Total</td>
+                            <td>{{ total.toLocaleString('it-IT', { style: 'currency', currency: 'VND' }) }}</td>
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button class="btn btn-outline-success" @click="createOrder" style="font-size: 15px;">Đặt Hàng</button>
+                </div>
+            </div>
+            <div class="card-body" style="text-align: center;" v-else>
+                <h3>Giỏ hàng trống!</h3>
             </div>
         </div>
-        <div class="d-flex justify-content-center">
-            <button class="btn btn-outline-success" @click="createOrder" style="font-size: 15px;">Xác Nhận Đặt Hàng</button>
-        </div>
+
     </section>
 </template>
 
@@ -117,7 +127,7 @@ async function createOrder() {
     await Axios.createOrder(newOrder.value.info, newOrder.value.detail)
     await clearCart()
     alert('Đặt hàng thành công')
-    router.push(`/mybill/${userid}`)
+    router.push(`/myorder/${userid}`)
 }
 
 </script>

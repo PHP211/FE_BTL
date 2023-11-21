@@ -9,6 +9,8 @@ import UserInfo from '../views/UserInfo.vue'
 import ChangePW from '../views/ChangePassword.vue'
 import AddProduct from '../views/AddProduct.vue'
 import UpdateProduct from '../views/UpdateProduct.vue'
+import OrderDetails from '../views/MyOrder.vue'
+import AllOrder from '../views/AllOrder.vue'
 
 const routes = [
     {
@@ -18,54 +20,55 @@ const routes = [
     {
         path: '/login',
         component: Login,
-        name: 'Login'
+        name: 'Login',
+        props : true ,
     },
     {
         path: '/signup',
         component: SignUp,
-        name: 'SignUp'
+        name: 'SignUp',
+        props : true ,
     },
     {
         path: '/cart',
         component: Cart,
-        name: 'Cart'
+        name: 'Cart',
+        props : true ,
     },
     {
         path: '/info',
         component: UserInfo,
-        name: 'UserInfo'
+        name: 'UserInfo',
+        props : true ,
     },
     {
         path: '/info/changepw',
         component: ChangePW,
-        name: 'ChangePW'
+        name: 'ChangePW',
+        props : true ,
     },
     {
         path: '/productadd',
         component: AddProduct,
-        name: 'AddProduct'
+        name: 'AddProduct',
+        props : true ,
     },
     {
         path: '/product/:id',
         component: UpdateProduct,
         name: 'UpdateProduct',
-        props: true
+        props: true,
     },
-    // {
-    //     path : '/mybill/:id' ,
-    //     component : () => import('../views/MyBill.vue') , 
-    //     props : true ,
-    // },
-    // {
-    //     path : '/mybill/:id/all' ,
-    //     component : () => import('../views/MyBill.all.vue') , 
-    //     props : true ,
-    // },
-    // {
-    //     path : '/detail/:mahoadon' ,
-    //     component : () => import('../views/BillDetail.vue') , 
-    //     props : true ,
-    // },
+    {
+        path: '/myorder/:id',
+        component: OrderDetails, 
+        props: true,
+    },
+    {
+        path: '/myorder/:id/all',
+        component: AllOrder, 
+        props: true,
+    },
     {
         path: '/:pathMatch(.*)',
         component: NotFound,
