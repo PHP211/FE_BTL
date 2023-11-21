@@ -35,7 +35,7 @@ class AxiosAPI {
 
     async getPrdById(id) {
         return (await this.api.get(`api/product/${id}`)).data
-    }
+    }   
 
     async deletePrd(id) {
         return (await this.api.delete(`/api/product/${id}`)).data
@@ -43,14 +43,14 @@ class AxiosAPI {
 
     async updatePrd(id, data) {
         data.price = data.price*1
-        data.quatity = data.quantity*1
+        data.quantity = data.quantity*1
         return (await this.api.put(`/api/product/${id}`, data)).data
     }
 
     async addPrd(data) {
         data.price = data.price*1
-        data.quatity = data.quantity*1
-        return (await this.api.put(`/api/product`, data)).data
+        data.quantity = data.quantity*1
+        return (await this.api.post(`/api/product`, data)).data
     }
 
     async getType() {
@@ -67,6 +67,26 @@ class AxiosAPI {
 
     async updateCart(id, data) {
         return (await this.api.put(`/api/cart/${id}`, data)).data
+    }
+
+    async createOrder(info, detail) {
+        return (await this.api.post('/api/bill', {info: info, detail: detail})).data
+    }
+
+    async getAvailable(id) {
+        return (await this.api.get(`/api/bill/uid/available/${id}`)).data
+    }
+
+    async getAllOrder(id) {
+        return (await this.api.get(`/api/bill/uid/${id}`)).data
+    }
+
+    async getDetail(id) {
+        return (await this.api.get(`/api/bill/${id}`)).data
+    }
+
+    async cancel(id) {
+        return (await this.api.delete(`/api/bill/${id}`)).data
     }
 }
 

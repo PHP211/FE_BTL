@@ -8,6 +8,7 @@ import Cart from '../views/Cart.vue'
 import UserInfo from '../views/UserInfo.vue'
 import ChangePW from '../views/ChangePassword.vue'
 import AddProduct from '../views/AddProduct.vue'
+import UpdateProduct from '../views/UpdateProduct.vue'
 
 const routes = [
     {
@@ -44,6 +45,27 @@ const routes = [
         component: AddProduct,
         name: 'AddProduct'
     },
+    {
+        path: '/product/:id',
+        component: UpdateProduct,
+        name: 'UpdateProduct',
+        props: true
+    },
+    // {
+    //     path : '/mybill/:id' ,
+    //     component : () => import('../views/MyBill.vue') , 
+    //     props : true ,
+    // },
+    // {
+    //     path : '/mybill/:id/all' ,
+    //     component : () => import('../views/MyBill.all.vue') , 
+    //     props : true ,
+    // },
+    // {
+    //     path : '/detail/:mahoadon' ,
+    //     component : () => import('../views/BillDetail.vue') , 
+    //     props : true ,
+    // },
     {
         path: '/:pathMatch(.*)',
         component: NotFound,

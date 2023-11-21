@@ -1,6 +1,6 @@
 <template>
     <section class="add">
-        <div class="card">
+        <div class="card" style="margin-top: 5%;margin-left: 13%;width: 70%;">
             <div class="card-header">
                 <h3 class="text-center">
                     <slot></slot>
@@ -32,7 +32,7 @@
                         <h2>Đơn giá bán</h2>
                     </div>
                     <div class="col-9">
-                        <input v-model="product.price" type="text" class="form-control ">
+                        <input v-model="product.price" type="number" class="form-control ">
                     </div>
                 </div>
                 <div class="row g-3 justify-content-center mb-3">
@@ -40,7 +40,7 @@
                         <h2>Số lượng</h2>
                     </div>
                     <div class="col-9">
-                        <input v-model="product.quantity" type="text" class="form-control ">
+                        <input v-model="product.quantity" type="number" class="form-control ">
                     </div>
                 </div>
                 <div class="row g-3 justify-content-center mb-3">
@@ -124,7 +124,7 @@ async function update() {
         product.value.price = 10000
         return alert('Giá tiền phải lớn hơn 0!')
     }
-    await Axios.updatePrd(props.id, props.value)
+    await Axios.updatePrd(props.id, product.value)
     alert('Chỉnh sửa thành công!')
     router.go(-1)
 }
@@ -151,9 +151,5 @@ async function create() {
     
 <style>
 
-.card {
-    margin-top: 5%;
-    margin-left: 13%;
-    width: 70%;
-}
+
 </style>

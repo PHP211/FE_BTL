@@ -1,10 +1,10 @@
 <template>
     <section class="products" id="products">
 
-        <h1 class="heading" style="top: 0px;"> Latest <span>products</span> </h1>
+        <h1 class="heading" style="top: 0px;"> Sản phẩm <span>MỚI NHẤT</span> </h1>
         <div class="search">
-            <input type="text" class="form-control" placeholder="Tìm sản phẩm...">
-            <button class="btn btn-primary">Tìm</button>
+            <input type="text" class="form-control" placeholder="Tìm sản phẩm..." v-model="input" @keyup.enter="getPrdByName">
+            <button class="btn btn-primary" @click="getPrdByName">Tìm</button>
         </div>
 
         <div class="additem">
@@ -16,11 +16,6 @@
 
         <div class="box-container" v-if="prdList.length != 0">
             <div class="box" v-for="i in prdList" :key="i._id" :value="i._id">
-                <div class="icons">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-share"></a>
-                    <a href="#" class="fas fa-eye"></a>
-                </div>
                 <img :src="i.PrdImage" alt="PrdImage">
                 <div class="content">
                     <h3>{{ i.productName }}</h3>
@@ -33,11 +28,14 @@
                         <i class="far fa-star"></i>
                     </div>
                     <button class="btns" v-if="login !== 'staff'" @click="additem(i)">Thêm vào giỏ hàng</button>
+                    <div v-else>
+                        <button class="btns" @click="$router.push(`/product/${i._id}`)">Chỉnh sửa</button>
+                        <button class="btns" @click="deletePrd(i._id)">Xoá</button>
+                    </div>
                 </div>
             </div>
-
-
         </div>
+        <h2 class="text-center mt-5" style="color:white" v-else>Không tìm thấy sản phẩm!</h2>
     </section>
 </template>
 

@@ -33,6 +33,7 @@ html{
   cursor: pointer;
   background:#fff;
   padding:.8rem 3rem;
+  margin: 0 3%;
 }
 
 .btns:hover{
