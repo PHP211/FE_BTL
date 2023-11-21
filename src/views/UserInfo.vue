@@ -24,10 +24,10 @@
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">Họ và tên</h6>
                                     </div>
-                                    <div class="col-sm-9 text-secondary" v-if="!setting">
+                                    <div class="col-sm-9 " v-if="!setting">
                                         {{ info.name }}
                                     </div>
-                                    <div class="col-sm-9 text-secondary" v-else>
+                                    <div class="col-sm-9 " v-else>
                                         <input type="text" placeholder="Họ tên" v-model="info.name">
                                     </div>
                                 </div>
@@ -36,10 +36,10 @@
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">Email</h6>
                                     </div>
-                                    <div class="col-sm-9 text-secondary" v-if="!setting">
+                                    <div class="col-sm-9 " v-if="!setting">
                                         {{ info.email }}
                                     </div>
-                                    <div class="col-sm-9 text-secondary" v-else>
+                                    <div class="col-sm-9 " v-else>
                                         <input type="text" placeholder="Email" v-model="info.email">
                                     </div>
                                 </div>
@@ -48,10 +48,10 @@
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">Số điện thoại</h6>
                                     </div>
-                                    <div class="col-sm-9 text-secondary" v-if="!setting">
+                                    <div class="col-sm-9 " v-if="!setting">
                                         {{ info.phone }}
                                     </div>
-                                    <div class="col-sm-9 text-secondary" v-else>
+                                    <div class="col-sm-9 " v-else>
                                         <input type="text" placeholder="Số điện thoại" v-model="info.phone">
                                     </div>
                                 </div>
@@ -60,10 +60,10 @@
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">Địa chỉ</h6>
                                     </div>
-                                    <div class="col-sm-9 text-secondary" v-if="!setting">
+                                    <div class="col-sm-9 " v-if="!setting">
                                         {{ info.address }}
                                     </div>
-                                    <div class="col-sm-9 text-secondary" v-else>
+                                    <div class="col-sm-9 " v-else>
                                         <input type="text" placeholder="Địa chỉ" v-model="info.address">
                                     </div>
                                 </div>
@@ -73,8 +73,14 @@
                                         <button class="btn btn-info " @click="setting = !setting" v-if="!setting">Chỉnh sửa thông tin</button>
                                         <button class="btn btn-info " @click="updateInfo" v-else>Xác nhận</button>
                                     </div>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-2">
                                         <RouterLink to="/info/changepw" class="btn btn-info">Đổi mật khẩu</RouterLink>
+                                    </div>
+                                    <div class="col-sm-2" v-if="isLogin === 'user'">
+                                        <RouterLink :to="'/myorder/'+root._id" class="btn btn-info">Giỏ hàng của tôi</RouterLink>
+                                    </div>
+                                    <div class="col-sm-2" v-else>
+                                        <RouterLink to="/adminorder" class="btn btn-info">Quản lý giỏ hàng</RouterLink>
                                     </div>
                                 </div>
                             </div>
@@ -176,7 +182,10 @@ a {
 h6 {
     font-size: 15px;
 }
-div .col-sm-9 .text-secondary {
-    font-size: 20px;
+.col-sm-9 {
+    font-size: 15px;
+}
+h4 {
+    font-size: 25px;
 }
 </style>

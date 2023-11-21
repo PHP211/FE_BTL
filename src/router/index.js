@@ -7,6 +7,7 @@ import NotFound from '../views/NotFound.vue'
 import Cart from '../views/Cart.vue'
 import UserInfo from '../views/UserInfo.vue'
 import ChangePW from '../views/ChangePassword.vue'
+import AddProduct from '../views/AddProduct.vue'
 
 const routes = [
     {
@@ -39,11 +40,15 @@ const routes = [
         name: 'ChangePW'
     },
     {
+        path: '/productadd',
+        component: AddProduct,
+        name: 'AddProduct'
+    },
+    {
         path: '/:pathMatch(.*)',
         component: NotFound,
         name: 'NotFound'
     },
-    
 ]
 
 const router = createRouter({

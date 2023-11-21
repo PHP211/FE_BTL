@@ -1,97 +1,141 @@
-.heading{
-    text-align: center;
-    font-size: 4rem;
-    color: black;
-    padding:1rem;
-}
-  
-.heading span{
-    text-transform: uppercase;
-    color:rgb(112, 202, 202);
+.heading {
+  text-align: center;
+  font-size: 4rem;
+  color: black;
+  padding: 1rem;
 }
 
-.products .box-container{
-    display: flex;
-    flex-wrap: wrap;
-    gap:1.5rem;
+.heading span {
+  text-transform: uppercase;
+  color: rgb(112, 202, 202);
 }
-  
-.products .box-container .box{
-    border:.1rem solid rgba(0,0,0,.1);
-    border-radius: .5rem;
+
+.products .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.products .box-container .box {
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: #f9f9f9;
+  flex: 1 1 30rem;
+}
+
+.products .box-container .box .content {
+  padding: 1.5rem;
+}
+
+.products .box-container .box img {
+  height: 10rem;
+  /* transform: rotate(-35deg); */
+  filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.1));
+  margin: 8rem 2rem;
+}
+
+.products .box-container .box:hover img {
+  transform: scale(1.2);
+}
+
+.products .box-container .box .icons {
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  top: 0.5rem;
+  left: -10rem;
+}
+
+.products .box-container .box:hover .icons {
+  left: 1rem;
+}
+
+.products .box-container .box .icons a {
+  height: 4.5rem;
+  width: 5rem;
+  line-height: 4.5rem;
+  font-size: 2rem;
+  color: black;
+  border: 0.1rem solid black;
+  border-radius: 0.5rem;
+  background: #fff;
+  margin-top: 0.5rem;
+}
+
+.products .box-container .box .icons a:hover {
+  background: rgb(112, 202, 202);
+  color: #fff;
+}
+
+.products .box-container .box .content h3 {
+  color: black;
+  font-size: 2.5rem;
+}
+
+.products .box-container .box .content .price {
+  color: black;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  padding: 1rem 0;
+}
+
+.products .box-container .box .content .price span {
+  color: rgb(112, 202, 202);
+  font-size: 1.5rem;
+  text-decoration: line-through;
+}
+
+.products .box-container .box .content .stars {
+  padding-bottom: 1rem;
+}
+
+.products .box-container .box .content .stars i {
+  font-size: 1.7rem;
+  color: rgb(112, 202, 202);
+}
+
+.search {
+  position: relative;
+  box-shadow: 0 0 40px rgba(51, 51, 51, 0.1);
+  margin: 5% 0;
+}
+
+.search input {
+  height: 50px;
+  text-indent: 25px;
+  border: 2px solid #d6d4d4;
+  border-radius: 10px;
+}
+
+.search input:focus {
+  box-shadow: none;
+  border: 2px solid blue;
+}
+
+.search .fa-search {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+}
+
+.search button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 40px;
+  width: 40px;
+  background: blue;
+  font-size: larger;
+}
+
+.additem {
     text-align: center;
-    position: relative;
-    overflow: hidden;
-    background:#f9f9f9;
-    flex:1 1 30rem;
+    padding-bottom: 5%;
 }
-  
-.products .box-container .box .content{
-    padding:1.5rem;
-}
-  
-.products .box-container .box img{
-    height:10rem;
-    transform: rotate(-35deg);
-    filter:drop-shadow(0 .5rem 1rem rgba(0,0,0,.1));
-    margin:8rem 2rem;
-}
-  
-.products .box-container .box:hover img{
-    transform: rotate(-35deg) scale(1.2);
-}
-  
-.products .box-container .box .icons{
-    display: flex;
-    flex-flow: column;
-    position: absolute;
-    top:.5rem; left:-10rem;
-}
-  
-.products .box-container .box:hover .icons{
-    left:1rem;
-}
-  
-.products .box-container .box .icons a{
-    height:4.5rem;
-    width:5rem;
-    line-height: 4.5rem;
-    font-size: 2rem;
-    color:black;
-    border:.1rem solid black;
-    border-radius: .5rem;
-    background:#fff;
-    margin-top: .5rem;
-}
-  
-.products .box-container .box .icons a:hover{
-    background:rgb(112, 202, 202);
-    color:#fff;
-}
-  
-.products .box-container .box .content h3{
-    color:black;
-    font-size: 2.5rem;
-}
-  
-.products .box-container .box .content .price{
-    color:black;
-    font-size: 2.5rem;
-    font-weight: bolder;
-    padding:1rem 0;
-}
-  
-.products .box-container .box .content .price span{
-    color:rgb(112, 202, 202);
-    font-size: 1.5rem;
-    text-decoration: line-through;
-}
-  
-.products .box-container .box .content .stars{
-    padding-bottom: 1rem;
-}
-  
-.products .box-container .box .content .stars i{
-    font-size: 1.7rem;
-    color:rgb(112, 202, 202);
+
+.additem button {
+    font-size: 15px;
 }
